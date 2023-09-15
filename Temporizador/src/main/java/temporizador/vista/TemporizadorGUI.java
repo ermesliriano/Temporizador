@@ -4,17 +4,32 @@
  */
 package temporizador.vista;
 
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import temporizador.modelo.TiempoMedido;
+import temporizador.controlador.TemporizadorController;
+
 /**
  *
  * @author Ermes
  */
 public class TemporizadorGUI extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form TemporizadorGUI
      */
     public TemporizadorGUI() {
         initComponents();
+        
+//        ctrl = new TemporizadorController(this);
+
+        // Configurar escuchadores de eventos en los botones
+//        iniciarBtn.addActionListener(e -> ctrl.iniciarListener());
+//        pausarButton.addActionListener(e -> ctrl.pausarCronometro());
+//        reiniciarButton.addActionListener(e -> ctrl.reiniciarCronometro());
+//        guardarButton.addActionListener(e -> ctrl.guardarTiempo());
+    
     }
 
     /**
@@ -123,43 +138,45 @@ public class TemporizadorGUI extends javax.swing.JFrame {
     }//GEN-LAST:event_guardarBtnActionPerformed
 
     private void iniciarBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_iniciarBtnActionPerformed
+        System.out.println("He pulsado el botón INICIAR");
         // TODO add your handling code here:
+//        ctrl.iniciar();
     }//GEN-LAST:event_iniciarBtnActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new TemporizadorGUI().setVisible(true);
-            }
-        });
-    }
+//    public static void main(String args[]) {
+//        /* Set the Nimbus look and feel */
+//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+//         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+//         */
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//                if ("Nimbus".equals(info.getName())) {
+//                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+//                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(TemporizadorGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
+//
+//        /* Create and display the form */
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new TemporizadorGUI().setVisible(true);
+//            }
+//        });
+//    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton guardarBtn;
@@ -169,4 +186,46 @@ public class TemporizadorGUI extends javax.swing.JFrame {
     private javax.swing.JButton reiniciarBtn;
     private javax.swing.JLabel tiempoLabel;
     // End of variables declaration//GEN-END:variables
+    private TemporizadorController ctrl;
+    
+    
+    public JButton getGuardarBtn() {
+        return guardarBtn;
+    }
+
+    public void setGuardarBtn(JButton guardarBtn) {
+        this.guardarBtn = guardarBtn;
+    }
+
+    public JButton getIniciarBtn() {
+        return iniciarBtn;
+    }
+
+    public void setIniciarBtn(JButton iniciarBtn) {
+        this.iniciarBtn = iniciarBtn;
+    }
+
+    public JButton getPausarBtn() {
+        return pausarBtn;
+    }
+
+    public void setPausarBtn(JButton pausarBtn) {
+        this.pausarBtn = pausarBtn;
+    }
+
+    public JButton getReiniciarBtn() {
+        return reiniciarBtn;
+    }
+
+    public void setReiniciarBtn(JButton reiniciarBtn) {
+        this.reiniciarBtn = reiniciarBtn;
+    }
+
+    public JLabel getTiempoLabel() {
+        return tiempoLabel;
+    }
+
+    public void setTiempoLabel(JLabel tiempoLabel) {
+        this.tiempoLabel = tiempoLabel;
+    }
 }

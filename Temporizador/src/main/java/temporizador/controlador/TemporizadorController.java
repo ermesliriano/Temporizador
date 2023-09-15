@@ -32,6 +32,7 @@ public class TemporizadorController {
 
     class IniciarListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
+            System.out.print("Has pulsado el botón iniciar");
             backend.iniciar();
         }
     }

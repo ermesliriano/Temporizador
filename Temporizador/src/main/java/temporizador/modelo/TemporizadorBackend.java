@@ -22,6 +22,7 @@ public class TemporizadorBackend {
     }
 
     public void iniciar() {
+        System.out.print("Has llamado el método iniciar");
         if (!enEjecucion) {
             temporizador = new Timer();
             temporizador.scheduleAtFixedRate(new TimerTask() {
